@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const API = "https://todo-mern-api-mmartinez-661261564723.herokuapp.com"
+const API = process.env.REACT_APP_API_URL || "http://localhost:3001"
 
 function App() {
 
@@ -12,7 +12,9 @@ function App() {
     GetTodos();
   }, [])
 
+
   const GetTodos = () => {
+    //test
     fetch(API + "/todos")
     .then(res => res.json())
     .then(data => setTodos(data))
