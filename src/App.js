@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-const API = process.env.REACT_APP_API_URL || "http://localhost:3001"
+const API = process.env.REACT_APP_API_URL || "https://todos-mern-fullapp.onrender.com"
 
 function App() {
 
@@ -14,7 +14,6 @@ function App() {
 
 
   const GetTodos = () => {
-    //test
     fetch(API + "/todos")
     .then(res => res.json())
     .then(data => setTodos(data))
